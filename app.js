@@ -3,9 +3,9 @@ const fs = require('fs');
 
 fs.readFile('beemoviescript.txt',  (error, body) => {
     body = body.toString().replace(/[\r\n]+/gm, ' ').split(' ').filter(word => word);
-    setInterval(() => {
-        var date = new Date();
-        if(date.getHours() === 16 && date.getMinutes() ===  13) {
+    //setInterval(() => {
+       // var date = new Date();
+       // if(date.getHours() === 16 && date.getMinutes() ===  13) {
             body.forEach((word, index) => {
                 setTimeout(() => {
                     //Replace '' with the actual name
@@ -14,6 +14,6 @@ fs.readFile('beemoviescript.txt',  (error, body) => {
                     })
                 }, 500 * (index + 1));
             });
-        }
-    }, 10000);
+        //}
+   // }, 10000);
 });
